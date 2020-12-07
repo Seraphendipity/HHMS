@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="330" height="330">
+
+<rect x="15" y="15" rx="40" ry="40" width="300" height="300" fill="none" 
+	stroke="#555" stroke-width="30"/>
+
+<text x="45"  y="290" font-size="385" font-weight="bold" fill="#555" 
+	stroke="#09fff3" stroke-width="10" textLength="250" 
+	lengthAdjust="spacing" font-family="'Lucida Console', Monaco, monospace">
+	Z
+	</text>
+
+</svg>

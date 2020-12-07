@@ -1,0 +1,20 @@
+<svg   xmlns="http://www.w3.org/2000/svg" 
+  version="1.1" width="1000" height="350">
+  
+<rect x="50" y="15" rx="40" ry="40" width="905" height="310" fill="none" stroke="#BBB" stroke-width="30"/>
+
+<text x="50"  y="298" font-size="400" font-weight="bold" fill="#EEE" textLength="900" font-family="'Lucida Console', Monaco, monospace">HHMS</text>
+
+<path d="M20 166 
+  h499 a1 1 0 0 0 1 -1 
+  v-95 a1 1 0 0 1 20 0
+  l62 150 a1 1 0 0 0 10 0 
+  l60 -150 a1 1 0 0 1 20 0 
+  l0 110 a1 1 0 0 0 1 1 
+  h285"
+   fill="none" stroke="#ff093e" stroke-width="20" stroke-linecap="round"/>
+
+</svg>
+
+<!-- Top and Bottom Touch -->
+  <!-- h17 a1 1 0 0 1 2 0 -->
