@@ -10,9 +10,36 @@ bibliography: [references.bib]
 
 ### Background
 
-## Project Description and Goals
+### Existing Solutions
+
+## Project Description
+
+In order to address the aforementioned problems, the team proposes an open-source home health monitoring system with an API to encourage extensibility to third-party devices. The system, initialized as **HHMS**, seeks to create and focus on a framework moreover than a single implementation, allowing relatively simple additions to the system without necessitating a recreation of the multi-step communication setups and data processing.
+
+The project thusly focuses on establishing this framework and its API, allowing near any device to integrate with the system given it adheres to the protocols set by the system.
+
+### Sample
+
+While the framework is the main focus, it is dificult to show that a framework exists without a working solution, and indeed multiple. If the system only demonstrated a single communicating device, it would hardly justify or prove the extensibility. Hence several sensor sub-systems will be set-up to work with the framework as an example of its capability and proof-of-concept.
+
+### Capabilities
+
+* **Data Acquisition and Communication**: the user shall be able to read the data from their sensor subsystems, as well as communicate back to them in order to set their properties.
+* **Data Processing**: data shall be processed according to set rules in order to indicate discrepencies with expected behavior.
+
+### Machine Learning
+
+In order to further aid the efforts of the caretaker, behavior anomaly recognition should be implemented in order to detect irregular patterns or sharp steps in established patterns. The implementation will allow short-term recognition of emergencies (e.g. falls) as well as unhealthy longer-term patterns (such as a sudden drop in weight over a few days).
 
 ## Design Process
+
+After establishing the main [project goals](#capabilities), design began with the overarching view of the project and brainstorming solutions via conceptual block diagrams, as d
+
+![An early conceptual diagram for the outline of the software systems.](Resources/Images/HHMS-SoftwareBlockDiagram-Simple-V3.png)
+
+To this end, there is already a necessary separation in the software -- data-steams of the connected devices and metadata used by the system to interpret the data-streams -- as well as hardware -- sensor component and system wrapping microcontrollers. Additionally, due to the emphasization on a DIY and simple extensible set-up, user communication through the system is inherent to the design.
+
+After the broad design was established, the individual components and implementation details were established in decision tables using a calculated Figure of Merit  system. These decisions were then processed into the design table that outlines the final component-level decisions. Due to the inexperience of team Engies, this system is crucial in order to determine the proper materials for the project and develop the parts list without merely relying on the limited scope of products introduced in courses.
 
 ### Methods
 
@@ -35,114 +62,6 @@ The decision tables compile the research into the relevant specifications
 ### Timeline
 
 ![Gantt Chart](Resources/Images/Gantt-01.png)
-
-```{.mermaid width=1800}
-gantt
-dateFormat MM-DD
-axisFormat %m-%d
-title Elijah's FA2020 HHMS Tasks - By Subject
-
-
-
-section Project Proposal
-Email Abi Yildirim about RC Car		: done,		rand,		09-05,		1w
-Invite New Member - Ziyad			: done,		rand,		09-05,		1w
-Create VR Resist Gloves Proj Prop	: done,		rand,		09-05,		1w
-Create Logistic Manage Proj Prop	: done,		rand,		09-05,		1w
-Email Abi Yildirim about IR Sensor	: done,		rand,		09-12,		1w
-Email Marstander about Ideas		: done,		rand,		09-12,		1w
-Discuss Myers' Project Ideas (solo)	: done,		rand,		09-12,		1w
-Generate HHMS Potential Solutions	: done,		rand,		09-26,		1w
-
-
-
-section Project Tools Setup
-Setup Email - Formal Comm.			: done,		email,		09-03,		2d
-Setup Discord - General Comm.		: done,		discord, 	09-03,		2d
-Setup Trello - Kanban PM			: done,		trello, 	10-03,		1w
-Setup GanttTools - Task Planning	: done,		gant, 		10-03,		1w
-Setup GitHub - Version History		: done,		github, 	10-03,		1w
-YouTube - Video Uploads				: done,		yt,			10-17,		1d
-
-
-
-section Presentation
-Create Initial Impressions (V1)		: done,		rand,		09-26,		1w
-Refine Initial Impressions	(V2)	: done,		rand,		10-03,		1w
-Add Poster Methods and Tech			: done,		rand,		10-10,		1w
-Add Poster Research Issues			: done,		rand,		10-10,		1w
-Add Poster References				: done,		rand,		10-10,		1w
-Add Poster Soft & Learn Mat			: done,		rand,		10-10,		1w
-Add Poster Hard & Price				: done,		rand,		10-10,		1w
-Add Poster Prep & Plan				: done,		rand,		10-10,		1w
-Refine Poster Specs					: done,		rand,		10-10,		1w
-Refine Poster Soft & Learn Mat		: done,		rand,		10-17,		1w
-Refine Poster Prep & Plan			: done,		rand,		10-17,		1w
-Refine Various Poster Sections		: done,		rand,		10-24,		1w
-Refine Poster References			: done,		rand,		10-31,		1w
-Feedback Mech Table					:		    mech,		11-14,		3d
-Compatible Programming Languages	:		  	compLangs,	11-14,		2d
-Software Flowchart V3				: active, 	flow3,		11-14,		12h
-Software Flowchart V4				:         	flow4,		after flow3,	12h
-Final Poster						:         	poster,		after flow4,	1d
-Final Decision Table				:         	decision,	after ddsp,	1d
-Presentation V2						:         	presentation,	after poster decision,	1d
-
-
-
-section Diagrams
-Create Individual TLD (V1)			: done,		rand,		10-03,		1w
-Refine TLD (V2)						: done,		rand,		10-10,		1w
-Create Software Block Diagram (V1)	: done,		rand,		10-10,		1w
-Refine Project Block Diagram		: done,		rand,		10-10,		1w
-Refine Software Block Diagram (V2)	: done,		rand,		10-17,		1w
-Create Hardware Diagram	(V1)		: done,		rand,		10-17,		1w
-Create Software Flowchart	(V1)	: done,		rand,		10-24,		1w
-Create Activity Diagram				: 			rand,		10-24,		1w
-Create Sequence Diagram				: 			rand,		10-24,		1w
-Create Data Flow Diagram			: 			rand,		10-31,		1w
-Refine Software Flowchart (V2)		: done,		rand,		11-07,		1w
-Create Software Flowchart (V3)		: done,		rand,		11-07,		1w
-Refine Software Flowchart (V4)		: done,		rand,		11-07,		1w
-
-
-
-section Decision Table
-Table Grabbing						: done,     grab,		11-13,		12h
-Data Reading						: active,   read,		after grab,	12h
-Decision Linking					:        	link,		after read,	12h
-Boolean Decisions					:        	bool,		after link,	12h
-Standard Deviation Eqs				:        	devi,		after link,	12h
-Simple Weighted Decisions			:        	simp,		after devi,	12h
-Comparison Decisions				:        	comp,		after link,	12h
-Local Disp							:        	ldsp,		after bool simp comp,	12h
-Design Table Disp					:        	ddsp,		after ldsp,	1d
-
-
-
-section Research
-Research Project Proposals			: done,		rand,		09-05,		1w
-Research RC Car	with API Project	: done,		rand,		09-05,		1w
-Research Stakeholders				: done,		rand,		09-26,		1w
-Research Alternative Solutions		: done,		rand,		09-26,		1w
-Research PM Software				: done,		rand,		10-03,		1w
-Resarch Software Tools for IoT		: done,		rand,		10-24,		1w
-Research Table Formulas				: done,		rand,		10-31,		1w
-Research m.Control vs m.Process		: done,		rand,		10-31,		1w
-Research Processing Methods			: done,		rand,		10-31,		1w
-Research Home Health Automation		: done,		rand,		11-07,		1w
-
-
-
-section Miscellaneous
-Contract Covid-chan					: done,		rand,		09-19,		1w
-Yeet Covid-chan						: done,		rand,		09-19,		1w
-Compute Data Storage Needs			: done,		rand,		10-24,		1w
-Compute Data Processing Needs		: done,		rand,		10-24,		1w
-Decide Comm. Protocols				: done,		rand,		10-31,		1w
-Logo-V1								: done,		logo1,		10-31,		1w
-Logo-V2								: done,		logo2,		11-28,		1w
-```
 
 ## System Design
 
@@ -169,3 +88,5 @@ Logo-V2								: done,		logo2,		11-28,		1w
 ### Ben Whalin
 
 ### Elijah Rose
+
+Elijah focused primarily on the software design aspects of the project, along with the aid of Terry, as detailed in [software simulation](). He additionally contributed various other pieces and work to the team, such as the hardware diagram V1, separating the Data-Acquisition and Processing hub, etc.
