@@ -1,0 +1,50 @@
+author:
+- {name: Ziyad Allehaibi, blazerId: zlehaibi}
+- {name: Terry Edwards, blazerId: tedwa98}
+- {name: Ben Whalin, blazerId: vaeca21}
+- {name: Elijah Rose, blazerId: elirose}
+mentor: Gregory Myers (gmyers)
+mentor-blid: gmyers
+instructor: Abdollah Mirbozorgi
+instructor-blid: samir
+
+course:
+  title: EE498
+  name: Senior Design I
+logo:
+  organization: Logo-UAB-ECE
+  project: Logo-HHMS-V3
+  author: Logo-Seraph
+
+link:
+  organization: https://www.uab.edu/home/
+  course: http://catalog.uab.edu/search/?P=EE%20498
+  project: https://github.com/Seraphendipity/HHMS
+  author: https://github.com/Seraphendipity
+
+#titlepage: true
+abstract-meta:
+  The idea behind the senior design project through EE-498 and 499 is to 
+  demonstrate the ability to design, model, and eventually create a prototype 
+  of the chosen team project. Throughout this project, the team develops a 
+  further understanding of teamwork regarding communication and delegation. 
+  The idea behind this project is to develop a home health monitoring system 
+  controller that has the ability to connect multiple subsystems to approach 
+  different aspects of a client's needs. This was done by designing the 
+  systems hub around the goal of creating a modular system that would fit 
+  around a client’s flexible needs. The design process consisted of creating 
+  a design table that would display all design decisions made throughout the 
+  process of creating the system. To ensure the best choices were made 
+  throughout the design process, each decision table was created to display 
+  and ultimately choose the best decision for each part of the design process. 
+  In each decision table, numerous weighted engineering characteristics were 
+  used to calculate the chosen option. These decision tables were compiled to 
+  create the design table used to create the prototype.
+toc-own-page: true
+toc-title: Table of Contents
+
+dir-logos: Resources/Logos/ 
+
+xnos-cleveref: true
+xnos-capitalise: true
+xnos-plus-name: "Figure"
