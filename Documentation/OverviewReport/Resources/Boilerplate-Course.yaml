@@ -28,3 +28,7 @@ toc-own-page: true
 toc-title: Table of Contents
 
 dir-logos: Resources/Logos/ 
+
+xnos-cleveref: true
+xnos-capitalise: true
+xnos-plus-name: "Figure"
