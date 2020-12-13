@@ -4,7 +4,7 @@ date: 2020-12-04
 bibliography: [references.bib]
 ---
 
-## Introduction
+# Introduction
 
 This report will outline and document the design methods and decisions made throughout the entire semester in the first semester of senior design. The project will demonstrate basic knowledge and understanding of both hardware and software systems as well as the capabilities of working in a virtual team environment. The goal of this first semester was to complete the entire design process in order to focus on the implementation next semester so that the group might arrive with a successful final senior design product at graduation. The communication abilities and knowledge of required tool sets were tested and displayed through the semester.  
 
@@ -20,30 +20,30 @@ To begin with the project, stakeholders as well as the lines that needed to be d
 
 ![Top Level Diagram Part 2](Resources/Images/TLD-02.png){#fig:TLD2}
 
-### Background
+## Background
 
-### Existing Solutions
+## Existing Solutions
 
-## Project Description
+# Project Description
 
 In order to address the aforementioned problems, the team proposes an open-source home health monitoring system with an API to encourage extensibility to third-party devices. The system, initialized as **HHMS**, seeks to create and focus on a framework moreover than a single implementation, allowing relatively simple additions to the system without necessitating a recreation of the multi-step communication setups and data processing.
 
 The project thusly focuses on establishing this framework and its API, allowing near any device to integrate with the system given it adheres to the protocols set by the system.
 
-### Sample
+## Sample
 
 While the framework is the main focus, it is dificult to show that a framework exists without a working solution, and indeed multiple. If the system only demonstrated a single communicating device, it would hardly justify or prove the extensibility. Hence several sensor sub-systems will be set-up to work with the framework as an example of its capability and proof-of-concept.
 
-### Capabilities
+## Capabilities
 
 - **Data Acquisition and Communication**: the user shall be able to read the data from their sensor subsystems, as well as communicate back to them in order to set their properties.
 - **Data Processing**: data shall be processed according to set rules in order to indicate discrepencies with expected behavior.
 
-### Machine Learning
+## Machine Learning
 
 In order to further aid the efforts of the caretaker, behavior anomaly recognition should be implemented in order to detect irregular patterns or sharp steps in established patterns. The implementation will allow short-term recognition of emergencies (e.g. falls) as well as unhealthy longer-term patterns (such as a sudden drop in weight over a few days).
 
-### Dictionary
+## Dictionary
 
 - Partially-Dependent Individual (PD): the stakeholder who will be monitored and cared for by the Caretaker
 - Caretaker: a primary stakeholder, uses HHMS to monitor their PDs
@@ -52,7 +52,7 @@ In order to further aid the efforts of the caretaker, behavior anomaly recogniti
   - We additionally need a term that refers to the abstract collection of devices that can be enslaved to the DAH as mapped by software, undecided on this.
   - Do not confuse with sensors, which may comprise the entirety of the SS or be merely a component. The SS wraps the sensor. Likewise, the SS wraps the Microcontroller and/or Microprocessor, which is why it may be inappropriate to call it as such.
 
-## Design Process
+# Design Process
 
 After establishing the main [project goals](#capabilities), design began with the overarching view of the project and brainstorming solutions via conceptual block diagrams, as d
 
@@ -60,19 +60,19 @@ After establishing the main [project goals](#capabilities), design began with th
 
 To this end, there is already a necessary separation in the software -- data-steams of the connected devices and metadata used by the system to interpret the data-streams -- as well as hardware -- sensor component and system wrapping microcontrollers. Additionally, due to the emphasization on a DIY and simple extensible set-up, user communication through the system is inherent to the design.
 
-After the broad design was established, the individual components and implementation details were established in decision tables using a calculated Figure of Merit  system. These decisions were then processed into the design table that outlines the final component-level decisions. Due to the inexperience of team Engies, this system is crucial in order to determine the proper materials for the project and develop the parts list without merely relying on the limited scope of products introduced in courses.
+After the broad design was established, the individual components and implementation details were established in decision tables using a calculated Figure of Merit [@FOM] system. These decisions were then processed into the design table that outlines the final component-level decisions. Due to the inexperience of team Engies, this system is crucial in order to determine the proper materials for the project and develop the parts list without merely relying on the limited scope of products introduced in courses.
 
-### Methods
+## Methods
 
-### Decision Tables
+## Decision Tables
 
 The decision tables compile the research into the relevant specifications
 
-![Decision Table 1](Resources/Images/DecisionTable-01.png)
+![Decision Table 1](Resources/Images/DecisionTable-01.png){#fig:DECT1}
 
-![Decision Table 2](Resources/Images/DecisionTable-02.png)
+![Decision Table 2](Resources/Images/DecisionTable-02.png){#fig:DECT2}
 
-### Design Tables
+## Design Tables
 
 To ease with the design process, a design table was created to document and display each design decision that was made throughout the semester. The table shown below in {+@fig:DEST} shows each decision that was made from the weighted tables as well as the problem statement, approach, and necessary equipment in order to create the home health monitoring system. The design table was then used to create the parts list towards the end of the report.
 
@@ -108,67 +108,76 @@ To complete the design process for the subsystem’s boards, the Microprocessor 
 
 ![Sensor Subsystem Buffer Storage Table](Resources/Images/SS-Buffer.png){#fig:SSBUF}
 
-### Input Table
+## Input Table
 
-### Output Table
+## Output Table
 
 ![Output Table](Resources/Images/OutputTable.jpg){#fig:OUTPUT}
 
 The Output Table, shown above in {+@fig:OUTPUT}, for the project is a list of potential tests and their expected results, with the measured results table to be filled in in the next semester for EE499 after extensive testing on the project has been performed. With this output table, the expected tests are to be done involving the data transfer rates, such as transferring data from the system to the hub via Bluetooth or Wi-Fi. To allow for a battery backup, testing for the battery lives for some of the different subsystems will be performed to make sure the battery back-up will be adequate for the project. And for the software aspect of the project, the file sizes of the data logs will be tested, expecting the files stored in the data acquisition hub, or the temporary storage of the subsystem itself in case of a power outage. The data filled in the expected column of the table was gathered by researching common data rate, battery lives, and based on the size of the strings generated for the activity logs, allowing for some overhead in the file size.
 
-### Timeline
+## Timeline
 
 To help with the organization of the project, a Gantt Chart for the Fall 2020 semester for EE498 was created. By giving each team member a color as well as a color for group activities, the work of the group can be visually organized and compiled in an easy-to-read manner, showing who’s assigned to the given tasks with each task having a specific timeline in order to complete it. The figures below show the different tasks assigned over the course of the semester to each team member, or the group if need be. [^KanbanStyle]
 
-[^KanbanStyle]: A Kanban-style project organization and task management structure was attempted as well via *Trello*.
+[^KanbanStyle]:
+	A Kanban-style project organization and task management structure was attempted as well via *Trello*.
 
-  ![A Kanban-style PM.](Resources/Images/KanbanStyle.png)
+	![](Resources/Images/KanbanStyle.png){width=50%}
   
-  However, due to the EE498 requirements, the project was switched to Gantt-style task management.
+	However, due to the EE498 requirements, the project was switched to Gantt-style task management.
 
-![Gantt Chart: Initialization](Resources/Images/Gantt-Initialization.png)
+![Gantt Chart: Initialization](Resources/Images/Gantt-Initialization.png){#fig:GANTTINIT}
 
-![Gantt Chart: Design 1](Resources/Images/Gantt-Design-01.png)
+![Gantt Chart: Design 1](Resources/Images/Gantt-Design-01.png){#fig:GANTTDES1}
 
-![Gantt Chart: Design 2](Resources/Images/Gantt-Design-02.png)
+![Gantt Chart: Design 2](Resources/Images/Gantt-Design-02.png){#fig:GANTTDES2}
 
-![Gantt Chart: Design 3](Resources/Images/Gantt-Design-03.png)
+![Gantt Chart: Design 3](Resources/Images/Gantt-Design-03.png){#fig:GANTTDES3}
 
-![Gantt Chart: Design 4](Resources/Images/Gantt-Design-04.png)
+![Gantt Chart: Design 4](Resources/Images/Gantt-Design-04.png){#fig:GANTTDES4}
 
-![Gantt Chart: Design 5](Resources/Images/Gantt-Design-05.png)
+![Gantt Chart: Design 5](Resources/Images/Gantt-Design-05.png){#fig:GANTTDES5}
 
-![Gantt Chart: Design 6](Resources/Images/Gantt-Design-06.png)
+![Gantt Chart: Design 6](Resources/Images/Gantt-Design-06.png){#fig:GANTTDES6}
 
-![Gantt Chart: Design 7](Resources/Images/Gantt-Design-07.png)
+![Gantt Chart: Design 7](Resources/Images/Gantt-Design-07.png){#fig:GANTTDES7}
 
 The project began in August 2020 towards the beginning of EE498 and the project will conclude in April of 2021 in EE499. Throughout the Fall 2020 semester, the project was selected, researched, and designed with each member of the group given certain tasks to complete, with group members helping each other out to try and complete the various tasks on time if need be. The implementation of the project’s design will begin in the Spring 2021 semester beginning at the end of January.
 
-### Subsystem Analysis
+## Subsystem Analysis
 
-## System Design
+# System Design
 
 The following sections of show the respective hardware and software systems’ designs, with the software simulations presented to give an idea of the look of the software aspect of the project. The hardware design will show the designs of the various hardware components of the project and the software design shows the expected flow of the project, that being the starting of the system and going through the ways the data is gathered and processed.
 
-### Hardware Design
+## Hardware Design
 
 The design of the hardware components hasn’t been finalized for the project yet. While the specific components have all been decided upon, a concrete design for the entire system hasn’t been decided upon. Though a final design will be decided upon and implemented in the Spring 2021 semester. While the design of the entire system is important, the software aspects of the system are more the focal point of the project since the project features a modular design, it’s hardware design is more fluid and less concrete than other projects.
 
 ![Hardware Block Diagram](Resources/Images/HardwareBlockDiagram.png)
 
-#### Sensor Subsystem Analysis
+### Sensor Subsystem Analysis
 
 Each of the sensor subsystems consists of the Microcontroller, the power supply, and the sensing apparatus. The sensing apparatus is connected to the microcontroller via the GPIO pins on the microcontroller, with the microcontroller collected the data from the sensor and sending it via either Bluetooth or Wi-Fi to the Data Acquisition Hub to be logged in the storage for the Microprocessor and then transmitted and processed via the cloud to then be received by the user on their device.
 
-#### Hardware Simulation
+### Hardware Simulation
 
-### Software Design
+## Software Design
 
-![Software Flowchart](Resources/Images/SoftwareFlowchart.png)
+The separation of several of the components necessitates at the minimum three separate software components: the sensor subsystems, the user's input/output of the system, and the intermediary communication and processing. Additionally, in order to better separate roles and allow the possibility of remote processing, the intermediary is further separated into a data-acquisition and processing component -- theoretically, these could be separate program running simultaneously on the same device or two separate systems entirely, the software shall not be the limiting factor in this regard.
 
-#### Software Simulation
+{*@fig:SOFTBLOCK} outlines the four major components of the software.
 
-## Cost Analysis
+![Software Block Diagram showing the major software components.](Resources/Images/SoftwareBlockDiagram.png){#fig:SOFTBLOCK}
+
+![Software Flowchart Interaction showing the individual runtimes of each major software component.](Resources/Images/SoftwareInteractionFlowchart.png){#fig:SOFTINT}
+
+![Software Functionality Flowchart showing some common use cases and how the users may interact and use the system,](Resources/Images/SoftwareFunctionalityFlowchart.png){#fig:SOFTFLOW}
+
+### Software Simulation
+
+# Cost Analysis
 
 The budget that was given in senior design consisted of $200 per group member. This amounted to $800 for the entire project. Due to one of the goals of our design being that it would be affordable, the team desired to not use the entire budget for the baseline of our product. This meant that throughout the semester we kept this idea in mind and chose hardware options based off reliability and dependability and not price. At the end of the design, the total cost of the hub/controller alone came out to be $106.94 while the cost of the subsystem sensor package which includes six sensor systems, and a wearable watch came out to be $253.24. Combined, this makes our entire product $360.18, more than half of our budget.  
 
@@ -180,28 +189,30 @@ Due to one of our team members being overseas for the semester and the fact that
 
 ![Parts List for Total Package](Resources/Images/PartsList-Total.png)
 
-## Individual Tasks
+# Individual Tasks
 
-### Ziyad Allehaibi
+## Ziyad Allehaibi
 
-### Terry Edwards
+## Terry Edwards
 
 Excluding the work put into this document, my tasks for this semester (After the project was chosen and researched) consisted of creating the initial rough draft sketch of the top-level design image used in the design poster. This sketch was later recreated in google drawing before updated and improved upon by other group members. After the initial problem statement was decided on, the possible subsystems needed to be brainstormed. To do this I created the subsystems table and added the different things that could be possibly done regarding monitoring a loved one. To fill out this table, I interviewed multiple nurses and a respiratory therapist to get their opinion on aspects of the subsystems that I could not think of. After compiling all the findings and my own personal ideas, a table of roughly sixty different subsystems was created. This table was then broken down and colorized based on the type of physical sensor that could be used in each subsystem. After researching sensor types, I broke the original subsystem table up into the ten sensor types that we have today and then compiled and categorized the different subsystems that were brainstormed and displayed them in a new table. This table was then used to create a weighted decision table based on the chosen engineering characteristics to determine the subsystems that would be implemented into the final design. Alongside the work with the subsystems table, I also aided creating and filling out the design table. This consisted of making many decision tables that required individual engineering characteristics and weights. After completing the decision tables I then compiled all the results into the design table used in our presentation. Next, I took the design table and the subsystem table and created the parts list. I researched parts options to make sure there were no cheaper options and then added them to the parts list. To determine the best combination of parts amongst the group, I split the parts list into multiple tables that showed individual prices for the hub itself and a set of subsystem sensors. Afterwards I combined the two to create the current parts list. I then created the output table used in the presentation. I filled out the initial contents of the table and another student later added on to these. I also recreated the Gantt chart after the initial one made by another student was corrupted and no longer functioned. This consisted of going through the entire semester and deciding on potential tasks that would be necessary to produce our product. Finally, I created the initial copy of the presentation that was used while the other students came behind me and added their individual slides
 
-### Ben Whalin
+## Ben Whalin
 
 My tasks for the first semester one (EE498) included researching the potential Microcontrollers and Microprocessors that would be looked at and considered for use in the project. Throughout the semester, I helped work on the Design Table as well as the Decision Tables needed to help with the project. I created the Top-Level Diagram (TLD) used for the poster for the course as well as the Hardware Diagram that will be useful for helping create the project in EE499. I contributed to the PowerPoint Presentation by creating the slides used for the TLD, Hardware Diagram and the Poster as well as helping look over everyone’s slides to help with ideas and proof-reading.  
 
-### Elijah Rose
+## Elijah Rose
 
 Elijah focused primarily on the software design aspects of the project, along with the aid of Terry, as detailed in [software simulation](#software-design). He additionally contributed various other pieces and work to the team, such as the hardware diagram V1, separating the Data-Acquisition and Processing hub, etc.
 
-## Appendix
+\newpage
 
-### Appendix A: Poster
+# Appendix
+
+## Appendix A: Poster
 
 ![HHMS Poster](Resources/Images/Poster.jpg)
 
-### Appendix B: Final Slides
+## Appendix B: Final Slides
 
 \includepdf[pages={-},nup=4x7,pagecommand={},width=5cm,linktodoc=true]{./Resources/Presentation.pdf}
