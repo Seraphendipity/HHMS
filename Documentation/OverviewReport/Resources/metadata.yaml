@@ -47,4 +47,9 @@ dir-logos: Resources/Logos/
 
 xnos-cleveref: true
 xnos-capitalise: true
-xnos-plus-name: "Figure"
+fignos-plus-name: "Figure"
+
+header-includes:
+- \usepackage[capitalise]{cleveref}
+- \usepackage{caption}
+- \usepackage{pdfpages}
